@@ -13,10 +13,9 @@ const mapper = new Mapper(client, {
 
 const pessoaMapper = mapper.forModel('Pessoa');
 
-const pessoa = {
-    email: 'maria@gmail.com',
-    nome: 'Maria'
-};
+
+
+// inserção
 
 async function salvar(pessoa) {
     pessoaMapper.insert(pessoa).then(result => {
@@ -24,6 +23,7 @@ async function salvar(pessoa) {
     });
 };
 
+// buscas
 
 /*async function listar() {
     pessoaMapper.findAll({}).then(result => {
@@ -41,4 +41,30 @@ async function buscarPorEmail(email) {
     });
 }
 
-buscarPorEmail('joao@gmail.com');
+// buscarPorEmail('joao@gmail.com');
+
+
+// atualização
+
+async function atualizar(pessoa) {
+    pessoaMapper.update(pessoa).then(result => {
+        console.log(result);
+    })
+}
+
+const pessoa = {
+    email: 'maria@gmail.com',
+    nome: 'Maria das Graças'
+};
+
+// atualizar(pessoa);
+
+// deleção
+
+async function deletar(email) {
+    pessoaMapper.remove({email}).then(result => {
+        console.log(result);
+    })
+}
+
+deletar('maria@gmail.com');
