@@ -1,11 +1,11 @@
 {
   "dependencies": {
-    "cassandra-driver": "^4.6.4"
+    "cassandra-driver": "^4.6.4",
+    "nodemon": "^2.0.19"
   },
   "name": "cassandra",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
